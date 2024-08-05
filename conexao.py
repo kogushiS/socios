@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 
 class Conexao:
     @classmethod
-    @st.cache_data(ttl=18000)
+    @st.cache_data(ttl=180)
     def conecta_bd(cls): # utilizando sqlalchemy
         # usuario -> : -> senha -> @ -> host -> / -> banco de dados
         # substitua 'mysql_user', 'mysql_pwd', 'mysql_host', 'mysql_db' pelos seus dados
