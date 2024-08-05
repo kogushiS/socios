@@ -1,0 +1,24 @@
+{"config":[
+    {"config":{
+        "defaultAggregated":true,"geoms":["auto"],"coordSystem":"generic","limit":-1,"timezoneDisplayOffset":0},
+        "encodings":{"dimensions":[
+            {"fid":"Data","name":"Data","basename":"Data","semanticType":"temporal","analyticType":"dimension","offset":0},
+            {"fid":"Período","name":"Período","basename":"Período","semanticType":"nominal","analyticType":"dimension","offset":0},
+            {"fid":"gw_mea_key_fid","name":"Measure names","analyticType":"dimension","semanticType":"nominal"}],
+        "measures":[{"fid":"Dinheiro","name":"Dinheiro","basename":"Dinheiro","analyticType":"measure","semanticType":"quantitative", "aggName":"sum","offset":0},
+        {"fid":"Pix","name":"Pix","basename":"Pix","analyticType":"measure","semanticType":"quantitative","aggName":"sum","offset":0},
+        {"fid":"Rodízio","name":"Rodízio","basename":"Rodízio","analyticType":"measure","semanticType":"quantitative","aggName":"sum","offset":0},
+        {"fid":"Sócios","name":"Sócios","basename":"Sócios","analyticType":"measure","semanticType":"quantitative","aggName":"sum","offset":0},
+        {"fid":"Total","name":"Total","basename":"Total","analyticType":"measure","semanticType":"quantitative","aggName":"sum","offset":0},
+        {"fid":"Total débito","name":"Total débito","basename":"Total débito","analyticType":"measure","semanticType":"quantitative","aggName":"sum","offset":0},
+        {"fid":"Total crédito","name":"Total crédito","basename":"Total crédito","analyticType":"measure","semanticType":"quantitative","aggName":"sum","offset":0},
+        {"fid":"Outros Cartões","name":"Outros Cartões","basename":"Outros Cartões","analyticType":"measure","semanticType":"quantitative","aggName":"sum","offset":0},
+        {"fid":"Total -30d","name":"Total -30d", "basename":"Total -30d", "analyticType":"measure", "semanticType":"quantitative","aggName":"sum", "offset":0},
+        {"fid":"gw_count_fid","name":"Row count","analyticType":"measure","semanticType":"quantitative","aggName":"sum","computed":true,"expression":{"op":"one","params":[],"as":"gw_count_fid"}},
+        {"fid":"gw_mea_val_fid","name":"Measure values","analyticType":"measure","semanticType":"quantitative","aggName":"sum"}],
+        "rows":[],"columns":[],"color":[],"opacity":[],"size":[],"shape":[],"radius":[],"theta":[],"longitude":[],"latitude":[],"geoId":[],"details":[],"filters":[],"text":[]},
+        "layout":{"showActions":false,"showTableSummary":false,"stack":"stack","interactiveScale":false,"zeroScale":true,
+        "size":{"mode":"auto","width":320,"height":200},"format":{},"geoKey":"name",
+        "resolve":{"x":false,"y":false,"color":false,"opacity":false,"shape":false,"size":false}},
+        "visId":"gw_CQfa","name":"Chart 1"}],
+        "chart_map":{},"workflow_list":[{"workflow":[{"type":"view","query":[{"op":"raw","fields":[]}]}]}],"version":"0.4.9"}
