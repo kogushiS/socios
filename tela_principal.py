@@ -224,6 +224,23 @@ class TelaPrincipal:
             st.write('---')
             st.markdown('Resumo da Mão de Obra')
             self.card_resumo_Fuc()
+
+            # CSS personalizado para alinhar o caption à esquerda
+            st.markdown("""
+                <style>
+                .left-align-caption {
+                    text-align: right;
+                    font-size: 0.8rem; /* Tamanho da fonte ajustável */
+                    color: grey; /* Cor do texto */
+                    margin-top: 120px; /* Deixa o texto mais abaixo*/
+                }
+                </style>
+                """, unsafe_allow_html=True)
+
+            # Usando o CSS personalizado no st.caption
+            st.markdown('<p class="left-align-caption">Aplicativo desenvolvido para gestão e \
+                            controle financeira. <br>Entre em contato (11-9696-51094) e deixe-me saber como esta sendo \
+                            sua experiência com o aplicativo.<br></p>', unsafe_allow_html=True)
         with tab2:
             self.tableau_vendas()
         with tab3:
