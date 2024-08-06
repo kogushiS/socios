@@ -247,7 +247,7 @@ class Vallet:
         self.debito_vallet = self.debito_martercard_vallet + self.debito_visa_vallet + self.debito_elo_vallet
         self.credito_vallet = self.credito_mastercard_vallet + self.credito_visa_vallet + self.credito_elo_vallet
         self.outros_cartoes_vallet = self.hiper_vallet + self.american_express_vallet + self.alelo_vallet + self.sodexo_vallet + self.ticket_rest_vallet + self.vale_refeicao_vallet + self.dinersclub_vallet
-        self.total_vallet = self.dinheiro_vallet + self.pix_vallet + self.debito_elo_vallet + self.credito_mastercard_vallet + self.outros_cartoes_vallet
+        self.total_vallet = self.dinheiro_vallet + self.pix_vallet + self.debito_vallet + self.credito_vallet + self.outros_cartoes_vallet
 
     def widget_vallet(self):
         # Forms pode ser declarado utilizando a sintaxe 'with'
