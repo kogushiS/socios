@@ -992,7 +992,15 @@ class FuncResumo:
         data_inicial = self.filtro.data_inicial
         data_final = self.filtro.data_final
 
-        df_data_func_ativo = (self.df_funcionario_ativo['data_contratacao'] >= data_inicial) & (self.df_funcionario_ativo['data_contratacao'] <= data_final)
+        # preparando os dados para df_data_func_a
+        # Converter a data de comparação para Timestamp
+        data_comparacao = pd.Timestamp('2024-01-01')
+        # Converter as colunas para o formato datetime se necessário
+        self.df_funcionario_ativo['data_contratacao'] = pd.to_datetime(self.df_funcionario_ativo['data_contratacao'])
+        self.df_funcionario_ativo['data_desligamento'] = pd.to_datetime(self.df_funcionario_ativo['data_desligamento'], errors='coerce')
+        # Condição de filtragem: funcionários contratados após a data_comparacao e ainda ativos (sem data de desligamento)
+        df_data_func_ativo = (self.df_funcionario_ativo['data_contratacao'] >= data_comparacao) & (self.df_funcionario_ativo['data_desligamento'].isnull())
+
         df_data_func_contratado = (self.df_cadastro['data_contratacao'] >= data_inicial) & (self.df_cadastro['data_contratacao'] <= data_final)
         df_data_func_demitido = (self.df_cadastro['data_desligamento'] >= data_inicial) & (self.df_cadastro['data_desligamento'] <= data_final)
 
@@ -1005,7 +1013,6 @@ class FuncResumo:
         self.dataframe_pg_funcionario()
         df = self.valores_pg_func
         df['valor_pago'] = pd.to_numeric(df['valor_pago'])
-
 
         funcionario_ativo_html = f"""
         <div style='text-align: center; border: 1px solid #ddd; padding: 10px; border-radius: 5px; margin-bottom: 20px;'>
@@ -1032,7 +1039,7 @@ class FuncResumo:
         </div>
         """
 
-        cols = st.columns(4)
+        cols = st.columns(5)
         with cols[0]:
             st.markdown(funcionario_ativo_html, unsafe_allow_html=True)
         with cols[1]:
