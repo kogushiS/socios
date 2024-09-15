@@ -750,9 +750,12 @@ class FuncPagamento:
 
         df = df.drop(['ID', 'ID_cadastro'], axis=1)
 
-        grafico_dinamico = StreamlitRenderer(df, spec="./json/pgfuncionario.json", spec_io_mode="rw")
-        renderer = grafico_dinamico
-        renderer.explorer()
+        if not df.empty:
+            grafico_dinamico = StreamlitRenderer(df, spec="./json/pgfuncionario.json", spec_io_mode="rw")
+            renderer = grafico_dinamico
+            renderer.explorer()
+        else:
+            st.warning("Existe informações pendentes para lançamento. Não há dados para exibir.")
 
 class FuncRescisao:
     def funcionario_ativo(self):
