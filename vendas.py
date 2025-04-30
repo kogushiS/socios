@@ -257,8 +257,8 @@ class Vendas:
         self.taxa = (self.valores_vendas['taxa'].sum())
 
         self.debito = self.debito_martercard + self.debito_visa + self.debito_elo
-        self.credito = self.credito_mastercard + self.credito_visa + self.credito_elo
-        self.outros_cartoes = self.hiper + self.american_express + self.alelo + self.sodexo + self.ticket_rest + self.vale_refeicao + self.dinersclub
+        self.credito = self.credito_mastercard + self.credito_visa + self.credito_elo + self.american_express
+        self.outros_cartoes = self.hiper + self.alelo + self.sodexo + self.ticket_rest + self.vale_refeicao + self.dinersclub
         self.total_vendas = self.dinheiro + self.pix + self.debito + self.credito + self.outros_cartoes + self.ifood
         self.ticket_medio = self.total_vendas / self.rodizio
 
