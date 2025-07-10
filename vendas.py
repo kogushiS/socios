@@ -216,7 +216,8 @@ class Vendas:
                     row['vale_refeicao'] * 0.0685 + \
                     row['ticket_rest'] * 0.06 + \
                     row['sodexo'] * 0.069 + \
-                    row['dinersclub'] * 0.0414
+                    row['dinersclub'] * 0.0414 + \
+                    row['pix'] * 0.0079
         
         # Aplicar a função calcular_taxa a cada linha do DataFrame e armazenar os resultados em uma nova coluna 'taxa'
         self.valores_vendas['taxa'] = self.valores_vendas.apply(calcular_taxa, axis=1)
